@@ -1,7 +1,13 @@
 $(function(){
    
-   $('#categoryform').hide();
+   //$('#categoryform').hide();
+   $('#start_date').datetimepicker({
+   	dateFormat : 'yy-mm-dd'
+   });
 
+   $('#end_date').datetimepicker({
+   	dateFormat : 'yy-mm-dd'
+   });
 }); 
 
 $("#addCategoryBtn").click(function(){
@@ -54,15 +60,3 @@ $("td").on("click","#editCategory",function(){
 
 });
 	
-/*
-
-	
-	/*
-	
-	
-	
-});
-
-
-
-*/

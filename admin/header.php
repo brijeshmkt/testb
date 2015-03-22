@@ -8,12 +8,10 @@
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" media="all" type="text/css" href="../css/jquery-ui-timepicker-addon.css" />
     
-    <link rel="stylesheet" href="../css/jquery.countdown.css">
-    <style type="text/css">
-    #defaultCountdown { width: 240px; height: 45px; }
-    </style>
-
+    
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,13 +21,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
     
-    
-    <script src="../js/jquery.plugin.js"></script>
-    <script src="../js/jquery.countdown.js"></script>
     
   </head>
   <body>
@@ -90,7 +82,7 @@
                Auction <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-               <li><a href="manage_products.php">Manage Products</a></li>
+               <li><a href="add_auction.php">Add Auction</a></li>
                <li><a href="manage_category.php">Manage Category</a></li>
                <li><a href="#">Bid History</a></li>
                <li><a href="#">Auction Won List</a></li>

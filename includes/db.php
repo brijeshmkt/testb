@@ -4,11 +4,11 @@ class db{
 
 	private $host = "localhost";
 	private $user = "root";
-	private $pass = "root";
+	private $pass = "";
 	private $base_name = "bid";
 
 	public function __construct(){
-		$this->connect($this->host, $this->user,$this->pass,$this->base_name);
+		@$this->connect($this->host, $this->user,$this->pass,$this->base_name);
 	}
 
 	/**
