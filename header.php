@@ -56,4 +56,8 @@
       </div>
   </div>
    
+  
+
 <div class="container">
+
+<?php include('partials/main_nav.php') ?>

@@ -4,7 +4,7 @@ class db{
 
 	private $host = "localhost";
 	private $user = "root";
-	private $pass = "";
+	private $pass = "root";
 	private $base_name = "bid";
 
 	public function __construct(){
@@ -50,8 +50,8 @@ class db{
 	{
 		$table = "auction_".$table;
 
-		$query = "select * from {$table} where id = '{$id}' ";
-
+		$query = "select * from {$table} where id = '{$id}' LIMIT 1";
+		
 		$result = mysql_query($query);
 		
 		$row = mysql_fetch_assoc($result);

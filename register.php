@@ -1,5 +1,5 @@
 <?php
-include('includes/init.php');
+include('init.php');
 
 
 if(isset($_POST['submit'])){

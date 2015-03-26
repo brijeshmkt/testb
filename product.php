@@ -1,37 +1,37 @@
 <?php
-include('includes/init.php');
+include('init.php');
 
 
 $id = $_GET['id'];
-// Keeping logic in header
-$query = "select * from products where id = '".$id."' LIMIT 1";
-$product = $db->getAll($query);
+
+// provide table name and id
+// do not use table prefix
+$product = $db->getOne("products", $id);
 
 include('header.php');
 
 ?>
 
-<h1>Product Details</h1>
+<h1><?= $product['name'];  ?></h1>
 
-<?php
+<div class="row">
 
-	print_r($product);
+	<div class="col-md-6">
+		<img width="320" src="files/products/<?= $product['image']; ?>">
+	</div>
 
-?>
+	<div class="col-md-6">
+		<p><?= $product['short_description'];  ?></p>
+		<p>Ending In <strong class="text-danger"><?= $product['end_date'];  ?> </strong></p>
+		<p>Buy Now Price: <?= $product['buy_now_price']; ?></p>
+	</div>
 
-</table>
+</div>
 
-<p>Counting down to 26 January <span id="year">2014</span>.</p>
-<div id="defaultCountdown"></div>
 
-<script>
-$(function () {
-	var austDay = new Date();
-	austDay = new Date(austDay.getFullYear() + 1, 1 - 1, 26);
-	$('#defaultCountdown').countdown({until: austDay});
-	$('#year').text(austDay.getFullYear());
-});
-</script>
+<div class="row">
+	<?= $product['description'];  ?>
+</div>
 
 
 

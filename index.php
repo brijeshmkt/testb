@@ -15,20 +15,29 @@ include('header.php');
 <table class="table table-striped table-hover">
   <thead>
       <tr>
-         <th>S.No</th>
+         
          <th>Name</th>
          <th>Image</th>
-         <th>View</th>
+         <th>Details</th>
+         <th>Current Price</th>
+         <th>Bids Placed</th>
+         <th>Ending</th>
+         <th>Bid Now</th>
       </tr>
    </thead>
 
 <tbody>
 <?php foreach ($res as $key => $value): ?>
 	<tr>
-		<td><?= $value['id']; ?></td>
+		
 		<td><?= $value['name']; ?></td>
 		<td><?= $value['image']; ?></td>
-		<td><a href="">View</a></td>
+    <td><?= $value['short_description']; ?></td>
+    <td><?= $value['opening_price']; ?></td>
+    <td>Bids Placed</td>
+    <td><?= $value['end_date']; ?></td>
+
+		<td><a href="product.php?id=<?= $value['id'] ?>">View</a></td>
 	</tr>
 <?php endforeach ?>
 </tbody>
