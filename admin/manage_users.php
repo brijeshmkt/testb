@@ -22,6 +22,7 @@ include('header.php');
          
          <th>S.No</th>
          <th>Name</th>
+         <th>Balance</th>
          <th>Edit</th>
          <th>Delete</th>
          
@@ -36,6 +37,8 @@ include('header.php');
    		<tr>
       		<td><?= $user['id']  ?></td>
       		<td><?= $user['username']  ?></td>
+            <td><?= $user['balance']  ?></td>
+
       		<td>Edit</td>
       		<td>Delete</td>
       	</tr>

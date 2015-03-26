@@ -1,5 +1,5 @@
 <?php
-include('includes/init.php');
+include('init.php');
 
 // Keeping logic in header
 
@@ -20,6 +20,10 @@ if (ini_get("session.use_cookies")) {
 
 // Finally, destroy the session.
 session_destroy();
+
+header("Location: index.php");
+
+exit;
 ?>
 
 <h1>Logout</h1>

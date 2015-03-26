@@ -4,7 +4,9 @@ class db{
 
 	private $host = "localhost";
 	private $user = "root";
-	private $pass = "root";
+
+
+	private $pass = "";
 	private $base_name = "bid";
 
 	public function __construct(){
@@ -41,7 +43,7 @@ class db{
 		while($rows = mysql_fetch_assoc($result)){
 			$res[] = $rows;
 		}
-	
+		
 		return $res;	
 
 	}

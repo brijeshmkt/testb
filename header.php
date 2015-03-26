@@ -44,11 +44,33 @@
           <div class="social">
             
             <ul class="list-inline">
-                <li><?php if(isset($_SESSION["username"])) {echo "You are logged in as " . $_SESSION["username"];} ?></li>
+
+              <?php if(isset($_SESSION["username"])){ ?>
+                <li><?php echo "Hello " . $_SESSION["username"]; ?></li>
+                  
+                  <?php 
+                    $userid = $_SESSION['userid'];  
+                    $user = $db->getOne('users', $userid);
+                    
+                  ?>
+                <li>Your Account Balance is INR <?= $user['balance'];  ?></li>
+                <li><a href="">Profile</a></li>
+                <li><a href="">Watch List</a></li>
+
+                <li><a href="">Add Balance</a></li>
+                <li><a href="">Transactions</a></li>
+                <li><a href="">My Bids</a></li>
+                <li><a href="logout.php">logout</a></li>
+
+
+               <?php }else{ ?>
+
+                
                 <li><a href="index.php">Home</a></li>
                 <li><a href="login.php">Sign In</a></li>
                 <li><a href="register.php">Register</a></li>
-                <li><a href="logout.php">logout</a></li>
+                
+                <?php } ?>
             </ul>
 
               

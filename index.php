@@ -1,16 +1,26 @@
 <?php
 include('init.php');
 
+if(isset($_GET['catid'])){
+  $catid = $_GET['catid'];
+  $query = "select * from auction_products WHERE category_id =  $catid ORDER BY id DESC";
+}else{
+  $query = "select * from auction_products ORDER BY id DESC";
+}
 
 // Keeping logic in header http://www.unieauction.com/platinum-demo/users/signup
-$query = "select * from auction_products";
+
+
+
 $res = $db->getAll($query);
+
+$msg = empty($res) ? "No records found":"" ; 
 
 include('header.php');
 
 ?>
 
-<h1>Lists</h1>
+<h1>Auctions</h1>
 
 <table class="table table-striped table-hover">
   <thead>
@@ -31,7 +41,7 @@ include('header.php');
 	<tr>
 		
 		<td><?= $value['name']; ?></td>
-		<td><?= $value['image']; ?></td>
+		<td><img width="150" height="150" src="files/products/<?= $value['image']; ?>" /> </td>
     <td><?= $value['short_description']; ?></td>
     <td><?= $value['opening_price']; ?></td>
     <td>Bids Placed</td>

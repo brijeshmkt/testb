@@ -22,8 +22,12 @@ $userid = $db->getAll($sql);
 		$_SESSION["username"] = $username;
 	}
 	
+header("Location: index.php");
 
+exit;
 }
+
+
 // Keeping logic in header //http://www.unieauction.com/platinum-demo/manageusers/index
 
 include('header.php');
