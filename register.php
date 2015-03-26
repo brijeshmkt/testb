@@ -13,6 +13,8 @@ extract($_POST);
 $sql = " INSERT INTO `bid`.`auction_users` (`username`,`email`,`password`,`first_name`,`last_name`) VALUES 
 ('$username','$email','$password','$first_name','$last_name')";
 
+echo $sql;
+
 mysql_query($sql);
 }
 // Keeping logic in header //http://www.unieauction.com/platinum-demo/manageusers/index
@@ -27,7 +29,7 @@ include('header.php');
 
 	<div class="col-md-8 form">
 		
-		<?php include('partials/form.php'); ?>
+		<?php include('partials/form_user_registration.php'); ?>
 		
 	</div>
 

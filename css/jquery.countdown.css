@@ -2,6 +2,7 @@
 .is-countdown {
 	border: 1px solid #ccc;
 	background-color: #eee;
+	overflow: hidden;
 }
 .countdown-rtl {
 	direction: rtl;
@@ -51,4 +52,8 @@
 .countdown-descr {
 	display: block;
 	width: 100%;
+}
+
+.countdown-section:last-child{
+	color: red;
 }
