@@ -1,5 +1,5 @@
 
-<form id="categoryform" class="form-horizontal" method="post" action="" enctype="multipart/form-data" >
+<form id="add_auction_form" class="form-horizontal" method="post" action="" enctype="multipart/form-data" >
 
         <div class="form-group required">
 
@@ -7,7 +7,7 @@
 
             <div class="col-xs-2">
 
-               <input type="text" class="form-control" name="name" id="name" value="<?= $auction['name'];  ?>">
+               <input type="text" class="form-control" name="name" id="name" value="<?= $auction['name'];  ?>" required>
 
             </div>
 
@@ -39,7 +39,7 @@
 
             <div class="col-xs-10">
 
-                <textarea name="description" id="description"><?= $auction['description'];  ?></textarea>
+                <textarea name="description" id="description" required><?= $auction['description'];  ?></textarea>
 
             </div>
 
@@ -48,7 +48,7 @@
         <div class="form-group required">
             <label for="description" class="control-label col-xs-2">Product Short Description</label>
             <div class="col-xs-2">
-                <input type="text" name="short_description" id="short_description" value="<?= $auction['short_description']; ?>">
+                <input type="text" name="short_description" id="short_description" required value="<?= $auction['short_description']; ?>">
             </div>
         
 
@@ -56,7 +56,7 @@
 
               <div class="col-xs-2">
                 <img width="100" src="../files/products/<?= $auction['image'];  ?>">
-                <input type="file" id="image" name="image">
+                <input type="file" id="image" name="image" required>
             <!-- <p class="help-block">Example block-level help text here.</p> -->
               </div>
         </div>
@@ -65,26 +65,26 @@
         <div class="form-group required">
             <label for="opening_price" class="control-label col-xs-2">Opening Price</label>
             <div class="col-xs-2">
-                <input type="text" name="opening_price" id="opening_price" value="<?= $auction['opening_price'];  ?>">
+                <input type="text" name="opening_price" id="opening_price" value="<?= $auction['opening_price'];  ?>" required>
             </div>
         
         
         
             <label for="lowest_bid_price" class="control-label col-xs-2">Lowest bid Price</label>
             <div class="col-xs-2">
-                <input type="text" name="lowest_bid_price" id="lowest_bid_price" value="<?= $auction['lowest_bid_price'];  ?>">
+                <input type="text" name="lowest_bid_price" id="lowest_bid_price"  value="<?= $auction['lowest_bid_price'];  ?>" required>
             </div>
         </div> 
         
         <div class="form-group required">
             <label for="bid_price" class="control-label col-xs-2">Incremental Value (bid price)</label>
             <div class="col-xs-2">
-                <input type="text" name="bid_price" id="bid_price" value="<?= $auction['bid_price']; ?>">
+                <input type="text" name="bid_price" id="bid_price"  value="<?= $auction['bid_price']; ?>" required>
             </div>
             
              <label for="buy_now_price" class="control-label col-xs-2">Buy Now Price</label>
             <div class="col-xs-2">
-                <input type="text" name="buy_now_price" id="buy_now_price" value="<?= $auction['buy_now_price']; ?>">
+                <input type="text" name="buy_now_price" id="buy_now_price"  value="<?= $auction['buy_now_price']; ?>" required>
             </div>
 
         </div>           
@@ -92,12 +92,12 @@
         <div class="form-group required">
             <label for="start_date" class="control-label col-xs-2">Start Date</label>
             <div class="col-xs-2">
-                <input type="text" name="start_date" id="start_date" value="<?= $auction['start_date']; ?>">
+                <input type="text" name="start_date" id="start_date"  value="<?= $auction['start_date']; ?>" required>
             </div>
 
              <label for="end_date" class="control-label col-xs-2">End Date</label>
             <div class="col-xs-2">
-                <input type="text" name="end_date" id="end_date" value="<?= $auction['end_date']; ?>">
+                <input type="text" name="end_date" id="end_date"  value="<?= $auction['end_date']; ?>" required>
             </div>
 
         </div> 

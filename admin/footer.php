@@ -8,7 +8,8 @@
 
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="../js/jquery-ui-timepicker-addon.js"></script>
-		
+		<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+	
 <script src="js/lib.js"></script>
 	</div>
   </body>

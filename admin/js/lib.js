@@ -59,4 +59,23 @@ $("td").on("click","#editCategory",function(){
 	
 
 });
-	
+
+
+$(document).ready(function() {
+
+	$("#add_auction_form").validate({
+		rules:{
+			name: "required",
+			opening_price: { required: true, minlength: 2, number: true	},
+			lowest_bid_price: { required: true, minlength: 2, number: true	},
+			bid_price: { required: true, minlength: 2, number: true	},
+			buy_now_price: { required: true, minlength: 2, number: true	},
+			
+
+		},
+		messages:{
+			name: "Title cannot be blank",
+		}
+	});
+
+});

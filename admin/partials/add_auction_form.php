@@ -1,4 +1,4 @@
-<form id="categoryform" class="form-horizontal" method="post" action="" enctype="multipart/form-data" >
+<form id="add_auction_form" class="form-horizontal" method="post" action="" enctype="multipart/form-data" >
 
         <div class="form-group required">
 
@@ -6,7 +6,7 @@
 
             <div class="col-xs-2">
 
-               <input type="text" class="form-control" name="name" id="name" value="<?php if(isset($editproduct)) echo $editproduct['name'] ?>">
+               <input type="text" class="form-control" name="name" id="name" value="" required>
 
             </div>
 
@@ -17,7 +17,9 @@
 
  
 
-                <select name="category_id">
+                <select name="category_id" id="category_id" required>
+                    <option value="">Select</option>
+
                     <?php $categories = $category->getIdValueArray(); ?>
                    <?php foreach ($categories as $key => $value): ?>
                         <option value='<?= $value['id']; ?>' > <?= $value['category']; ?> </option>
@@ -36,7 +38,7 @@
 
             <div class="col-xs-10">
 
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="description" required></textarea>
 
             </div>
 
@@ -45,14 +47,14 @@
         <div class="form-group required">
             <label for="description" class="control-label col-xs-2">Product Short Description</label>
             <div class="col-xs-2">
-                <input type="text" name="short_description" id="short_description">
+                <input type="text" name="short_description" id="short_description" required>
             </div>
         
 
             <label for="image" class="control-label col-xs-2">Upload Image</label>
 
               <div class="col-xs-2">
-                <input type="file" id="image" name="image">
+                <input type="file" id="image" name="image" required>
             <!-- <p class="help-block">Example block-level help text here.</p> -->
               </div>
         </div>
@@ -61,26 +63,26 @@
         <div class="form-group required">
             <label for="opening_price" class="control-label col-xs-2">Opening Price</label>
             <div class="col-xs-2">
-                <input type="text" name="opening_price" id="opening_price">
+                <input type="text" name="opening_price" id="opening_price" required>
             </div>
         
         
         
             <label for="lowest_bid_price" class="control-label col-xs-2">Lowest bid Price</label>
             <div class="col-xs-2">
-                <input type="text" name="lowest_bid_price" id="lowest_bid_price">
+                <input type="text" name="lowest_bid_price" id="lowest_bid_price" required>
             </div>
         </div> 
         
         <div class="form-group required">
             <label for="bid_price" class="control-label col-xs-2">Incremental Value (bid price)</label>
             <div class="col-xs-2">
-                <input type="text" name="bid_price" id="bid_price">
+                <input type="text" name="bid_price" id="bid_price" required>
             </div>
             
              <label for="buy_now_price" class="control-label col-xs-2">Buy Now Price</label>
             <div class="col-xs-2">
-                <input type="text" name="buy_now_price" id="buy_now_price">
+                <input type="text" name="buy_now_price" id="buy_now_price" required>
             </div>
 
         </div>           
@@ -88,12 +90,12 @@
         <div class="form-group required">
             <label for="start_date" class="control-label col-xs-2">Start Date</label>
             <div class="col-xs-2">
-                <input type="text" name="start_date" id="start_date">
+                <input type="text" name="start_date" id="start_date" required>
             </div>
 
              <label for="end_date" class="control-label col-xs-2">End Date</label>
             <div class="col-xs-2">
-                <input type="text" name="end_date" id="end_date">
+                <input type="text" name="end_date" id="end_date" required>
             </div>
 
         </div> 
@@ -103,7 +105,9 @@
          <div class="form-group required">
             <label for="buy_now_price" class="control-label col-xs-2">Payment Mode</label>
             <div class="col-xs-2">
-                <select id="payment_method" name="payment_method">
+                <select id="payment_method" name="payment_method" required>
+                    <option value="">Select</option>
+
                     <option value="paypal">PayPal</option>
                     <option value="wire_transfer">Wire Transfer</option>
                     <option value="mailing">By Cheque</option>
