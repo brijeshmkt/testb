@@ -8,15 +8,16 @@ $auction = $db->getOne("products",$productid);
 //$common->pr($auction);
 
 
-if(isset($_POST['name'])){
-print_r($_POST);
+if(isset($_POST['editproduct'])){
 
+  unset($_POST['editproduct']);
 
   if( $_FILES['image']['name'] != "" ){
       move_uploaded_file($_FILES["image"]["tmp_name"],"../files/products/". $_FILES["image"]["name"]);
       $_POST['image'] = $_FILES['image']['name'];
    }else {
-       //die("No file specified!");
+       
+       unset($_POST['image']);
    }
 
 
@@ -36,11 +37,11 @@ print_r($_POST);
 
   $query .= " Where id = '$productid' ";
 
-echo $query;
-  // if(mysql_query($query)){
-  //   header("Location: all_auctions.php");
-  //   die(); 
-  // }
+
+  if(mysql_query($query)){
+    header("Location: all_auctions.php");
+    die(); 
+  }
 
 }
 

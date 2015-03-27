@@ -126,7 +126,7 @@
 
         </div>  
 
-         
+         <input type="hidden" name="editproduct">
 
     
 
