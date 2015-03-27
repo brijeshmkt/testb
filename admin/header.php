@@ -65,7 +65,7 @@
                Users <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-               <li><a href="manage_users.php">List Users</a></li>
+               <li><a href="manage_users.php">Manage Users</a></li>
                <li><a href="#">Send Emails</a></li>
                <li><a href="#">User Logins</a></li>
                
@@ -83,6 +83,8 @@
             </a>
             <ul class="dropdown-menu">
                <li><a href="add_auction.php">Add Auction</a></li>
+               <li><a href="all_auctions.php">All Auctions</a></li>
+
                <li><a href="manage_category.php">Manage Category</a></li>
                <li><a href="#">Bid History</a></li>
                <li><a href="#">Auction Won List</a></li>

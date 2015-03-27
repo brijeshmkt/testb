@@ -6,7 +6,7 @@ class db{
 	private $user = "root";
 
 
-	private $pass = "";
+	private $pass = "root";
 	private $base_name = "bid";
 
 	public function __construct(){

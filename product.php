@@ -22,12 +22,17 @@ include('header.php');
 
 	<div class="col-md-6">
 		<p><?= $product['short_description'];  ?></p>
-		<p>Ending On <strong class="text-danger"><?= $product['end_date'];  ?> </strong></p>
+		<p>Ending On <strong class="text-danger">
+
+			<?= date("jS F, Y H:i:s", strtotime($product['end_date']));  ?> 
+		</strong></p>
 
 		<h2>Expiring Soon...</h2>
 		<p id="enddate"></p>
 
 		<p>Buy Now Price: <?= $product['buy_now_price']; ?></p>
+
+		<button type="button" class="btn btn-primary"><?= isset($userid)? "Bid Now": "Log In" ; ?></button>
 	</div>
 
 </div>

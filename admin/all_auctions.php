@@ -1,26 +1,11 @@
 <?php
-include('init.php');
+include('../init.php');
 
-if(isset($_GET['catid'])){
-  $catid = $_GET['catid'];
-  $query = "select * from auction_products WHERE category_id =  $catid ORDER BY id DESC";
-}else{
-  $query = "select * from auction_products ORDER BY id DESC";
-}
-
-// Keeping logic in header http://www.unieauction.com/platinum-demo/users/signup
-
-
-
-$res = $db->getAll($query);
-
-$msg = empty($res) ? "No records found":"" ; 
-
+// Keeping logic in header
+$sql = "select * from auction_products ORDER BY id DESC";
+$res = $db->getAll($sql);
 include('header.php');
-
 ?>
-
-<h1>Auctions</h1>
 
 <table class="table table-striped table-hover">
   <thead>
@@ -31,19 +16,23 @@ include('header.php');
          <th>Details</th>
          <th>Current Price</th>
          <th>Bids Placed</th>
-         <th>Ending On</th>
-         <th>Bid Now</th>
+         <th>Ending</th>
+         <th>Preview</th>
+         <th>Edit</th>
+         <th>Delete</th>
+
+
       </tr>
    </thead>
 
 <tbody>
 <?php foreach ($res as $key => $value): ?>
-	<tr>
-		
-		<td><?= $value['name']; ?></td>
-		<td>
+   <tr>
+      
+      <td><?= $value['name']; ?></td>
+      <td>
       <a href="product.php?id=<?= $value['id'] ?>">
-        <img width="150" height="150" src="files/products/<?= $value['image']; ?>" />
+        <img width="150" height="150" src="../files/products/<?= $value['image']; ?>" />
        </a>  
     </td>
     <td><?= $value['short_description']; ?></td>
@@ -52,11 +41,19 @@ include('header.php');
     <td><?= (date('Y-m-d H:i:s') > $value['end_date']) ? "Expired" : date("jS F, Y H:i:s", strtotime($value['end_date'])); ?></td>
 
 
-		<td><a href="product.php?id=<?= $value['id'] ?>">View</a></td>
-	</tr>
+
+      <td><a target="_blank" href="../product.php?id=<?= $value['id'] ?>">View</a></td>
+      <td><a href="edit_auction.php?productid=<?= $value['id'] ?>">Edit</a></td>
+      <td><a href="product.php?id=<?= $value['id'] ?>&action=auction_delete">Delete</a></td>
+
+
+   </tr>
 <?php endforeach ?>
 </tbody>
 </table>
+
+
+
 
 
 
